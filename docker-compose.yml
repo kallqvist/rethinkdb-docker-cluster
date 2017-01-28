@@ -1,12 +1,12 @@
 rdb1:
-  build: .
+  image: kallqvist/rethinkdb-cluster
   ports:
     - 8080:8080
   volumes:
     - ./data/rdb01:/data
 
 rdb2:
-  build: .
+  image: kallqvist/rethinkdb-cluster
   links:
     - rdb1
   environment:
@@ -17,7 +17,7 @@ rdb2:
     - ./data/rdb02:/data
 
 rdb3:
-  build: .
+  image: kallqvist/rethinkdb-cluster
   links:
     - rdb1
   environment:
