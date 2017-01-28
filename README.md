@@ -1,5 +1,7 @@
 # rethinkdb-docker-cluster
 
+For auto-build image, head over to docker hub: https://hub.docker.com/r/kallqvist/rethinkdb-cluster/
+
 A docker image to make RethinkDb clustering a bit easier and more container friendly.
 This image is built on top of rethinkdb:latest and adds an docker-entrypoint.sh that dynamically tries to set canonical IP and join IP based on docker links and hostnames.
 
