@@ -2,11 +2,8 @@ rdb1:
   build: .
   ports:
     - 8080:8080
-    # - 28015:28015
-    # - 29015:29015
   volumes:
     - ./data/rdb01:/data
-    - ./docker-entrypoint.sh:/docker-entrypoint.sh
 
 rdb2:
   build: .
@@ -16,8 +13,6 @@ rdb2:
     JOIN: rdb1
   ports:
     - 8081:8080
-    # - 28016:28015
-    # - 29016:29015
   volumes:
     - ./data/rdb02:/data
 
