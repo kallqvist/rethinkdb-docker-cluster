@@ -2,6 +2,8 @@ rdb1:
   image: kallqvist/rethinkdb-cluster
   ports:
     - 8080:8080
+  environment:
+    JOIN: rdb1
   volumes:
     - ./data/rdb01:/data
 
@@ -11,18 +13,5 @@ rdb2:
     - rdb1
   environment:
     JOIN: rdb1
-  ports:
-    - 8081:8080
   volumes:
     - ./data/rdb02:/data
-
-rdb3:
-  image: kallqvist/rethinkdb-cluster
-  links:
-    - rdb1
-  environment:
-    JOIN: rdb1
-  ports:
-    - 8082:8080
-  volumes:
-    - ./data/rdb03:/data
